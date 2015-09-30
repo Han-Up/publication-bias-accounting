@@ -1,11 +1,14 @@
 
-##read pvalue data from GitHub
+## following codes replicate "Publicatio Bias in Accounting Research" by Sudipta Basu and han-Up Park
+## the codes depend on the following libraries
 library(maxLik)
 library(foreach)
 library(sandwich)
 library(lmtest)
 library(car)
-pvalue_data <- read.csv("pvalue_temp2.csv")
+
+##read the original data
+load("CAR_TAR_JAR_JAE_2011.RData")
 attach(pvalue_data)
 
 ## pvalue_all contains estimated p-value, pvalue without enough information to back-up is imputed by pvalue_alt (*, ***, <0.05, etc.)
